@@ -24,5 +24,10 @@ RSpec.describe StringCalculator do
       result = string_calculator.add('1,2,3')
       expect(result).to eq(6)
     end
+
+    it 'returns the sum when number has new lines char between numbers' do
+      result = string_calculator.add('1\n2,3')
+      expect(result).to eq(6)
+    end
   end
 end
