@@ -14,5 +14,11 @@ RSpec.describe StringCalculator do
       result = string_calculator.add('1')
       expect(result).to eq(1)
     end
+
+    it 'calculates the total of two numbers if they are separated by a comma' do
+      string_calculator = StringCalculator.new
+      result = string_calculator.add('1,2')
+      expect(result).to eq(3)
+    end
   end
 end
