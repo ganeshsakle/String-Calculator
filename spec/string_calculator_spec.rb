@@ -40,5 +40,12 @@ RSpec.describe StringCalculator do
         expect(result).to eq('Not Allowed')
       end
     end
+
+    context "Support different delimiters" do
+      it 'returns the sum of number when delimiters provided' do
+        result = string_calculator.add('//;\n1;2')
+        expect(result).to eq(3)
+      end
+    end
   end
 end
