@@ -12,6 +12,8 @@ class StringCalculator
 
     raise_negatives_exception(numbers_array)
 
+    numbers_array.reject! { |num| num > 1000 }
+
     numbers_array.sum
   end
 
