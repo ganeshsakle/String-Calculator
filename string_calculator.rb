@@ -1,4 +1,5 @@
 class StringCalculator
-  def add
+  def add(input)
+    0 if input.empty?
   end
 end
