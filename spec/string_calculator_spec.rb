@@ -50,8 +50,7 @@ RSpec.describe StringCalculator do
 
     context "Negatives not allowed" do
       it 'throw an exception negatives not allowed and the negative that was passed' do
-        result = string_calculator.add('1,-2,-3')
-        expect(result).to eq('negatives not allowed - -2,-3')
+        expect { string_calculator.add('1,-2,-3') }.to raise_error(RuntimeError, /negative numbers not allowed -2, -3/)
       end
     end
   end
