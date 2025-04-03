@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StringCalculator
   def add(input)
     return 0 if input.empty?
@@ -18,7 +20,6 @@ class StringCalculator
   end
 
   private
-
 
   def extract_delimiter(numbers)
     numbers.start_with?('//') ? numbers.split('\n', 2).first[-1] : ','

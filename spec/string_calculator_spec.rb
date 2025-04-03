@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rspec'
 require_relative '../string_calculator'
 
@@ -5,7 +7,7 @@ RSpec.describe StringCalculator do
   describe '#add' do
     let(:string_calculator) { StringCalculator.new }
 
-    context "Test case of an empty string, one & two numbers" do
+    context 'Test case of an empty string, one & two numbers' do
       it 'returns 0 for an empty string' do
         result = string_calculator.add('')
         expect(result).to eq(0)
@@ -22,14 +24,14 @@ RSpec.describe StringCalculator do
       end
     end
 
-    context "Allow the Add method to handle an unknown amount of numbers" do
+    context 'Allow the Add method to handle an unknown amount of numbers' do
       it 'returns the sum of n number separated by comma' do
         result = string_calculator.add('1,2,3')
         expect(result).to eq(6)
       end
     end
 
-    context "Allow the Add method to handle new lines between numbers" do
+    context 'Allow the Add method to handle new lines between numbers' do
       it 'returns the sum when number has new lines char between numbers' do
         result = string_calculator.add('1\n2,3')
         expect(result).to eq(6)
@@ -41,14 +43,14 @@ RSpec.describe StringCalculator do
       end
     end
 
-    context "Support different delimiters" do
+    context 'Support different delimiters' do
       it 'returns the sum of number when delimiters provided' do
         result = string_calculator.add('//;\n1;2')
         expect(result).to eq(3)
       end
     end
 
-    context "Negatives not allowed" do
+    context 'Negatives not allowed' do
       it 'throw an exception negatives not allowed and the negative that was passed' do
         expect { string_calculator.add('1,-2,-3') }.to raise_error(RuntimeError, /negative numbers not allowed -2, -3/)
       end
